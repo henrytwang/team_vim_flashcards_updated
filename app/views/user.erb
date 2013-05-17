@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Welcome to Team Vim!</h1>
-  <p>This is your Account page, deal with it.</p>
+  <p>This is your Account page, <span class="deal">deal with it.</span></p>
 
   <h2>Start a Game.</h2>
 
@@ -13,7 +13,7 @@
     <input type="submit" value="start">
   </form>
 
-  <h2>Your results, deal with it</h2>
+  <h2>Your results, <span class="deal">deal with it.</span></h2>
   <%current_user.get_stats.each do |set|%>
   <strong><%= set[0] %></strong>: <span class="round_percentage"><%= set[1] %></span><br>
   <%end%>

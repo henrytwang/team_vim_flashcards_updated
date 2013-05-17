@@ -11,7 +11,8 @@ post '/question' do
     @working = Deck.find_by_name(params[:decks])
     
     @round = current_round || Round.create( :deck_id => @working.id,
-                        :user_id => current_user.id )
+                                            :user_id => current_user.id )
+
     session[:round_id] = @round.id
 
     @card = (@working.cards - current_round.cards).sample

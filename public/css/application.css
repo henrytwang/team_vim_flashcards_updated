@@ -1,9 +1,59 @@
+body {
+  background: #00A8C6;
+}
+
+input {
+  border: none;
+  background: #F9F2E7;
+}
+
+input[type=text], input[type=password] {
+  width:300px;
+  height:80px;
+  font-size: 40px;
+}
+
 .container {
   margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
+  width: 300px;
+  padding: 30px;
   border: 1px dotted black;
+  background: #F9F2E7;
+  margin-left: auto;
+  margin-right: auto;
+
 }
+
 th {
   text-align: left;
+}
+
+.deal {
+  font-family: Comic Sans, Comic Sans MS, cursive;
+  font-style: italic;
+  font-size: 20px;
+}
+
+h1 {
+  font-family:
+}
+
+.surround {
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;/* half of #content height*/
+  left: 0;
+  width: 100%;
+}
+
+.user-account {
+float:right;
+margin-right: 20px;
+}
+
+.answer-info {
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

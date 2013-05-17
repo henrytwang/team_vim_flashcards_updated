@@ -1,19 +1,12 @@
 <div class="container">
-  <h1>Welcome to Team Vim!</h1>
-  <p>Start answering questions, deal with it.</p>
-
-  <h2>Here's your question:</h2>
-
-  <h3><%= @card.question %></h3>
+  <h3><%= @card.question %>?</h3>
 
   <form id ="answer" action="/answer" method="post">
-    <h3>Your answer:</h3>
-
-    <input type="text" name="answer" placeholder="Enter your answer here!">
+    <input type="text" name="answer" placeholder="answer me">
     <input type="hidden" name="card_id" value="<%= @card.id %>">
     <br>
     <br>
-    <input type="submit" value="submit answer">
+    <input type="submit" value="shoot it over">
   </form>
 
 </div>
