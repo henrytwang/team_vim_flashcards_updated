@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   
   has_many :rounds
   has_many :decks, :through => :rounds
-  has_many :guesses
   
   validates :email, :presence => true, :format => {:with =>  /\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3}/}, 
             :uniqueness => true

@@ -3,7 +3,7 @@ class CreateGuesses < ActiveRecord::Migration
     create_table :guesses do |t|
       t.string  :guess
       t.boolean :correct?
-      t.integer :user_id
+      t.integer :round_id, :card_id
     end
   end
 end
