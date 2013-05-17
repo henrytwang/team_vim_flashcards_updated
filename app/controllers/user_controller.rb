@@ -1,5 +1,5 @@
 get '/sign_up' do
-  erb :sign_up
+  erb :signup
 end
 
 get '/sign_in' do
@@ -12,7 +12,7 @@ end
 
 post '/sign_in' do
   if User.authenticate(params[:email], params[:password])
-    @user = User.find_all_by_email(params[:email])
+    @user = User.find_all_by_email(params[:email]).first
     session[:user_id] = @user.id
   else
     redirect to '/sign_in'
@@ -27,7 +27,12 @@ post '/sign_up' do
   erb :user
 end
 
-delete '/logout' do
+get '/result' do
+  erb :results
+end
+
+get '/logout' do
   session[:user_id] = nil
+  session[:round_id] = nil
   redirect to '/'
 end

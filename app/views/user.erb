@@ -4,7 +4,7 @@
 
   <h2>Start a Game.</h2>
 
-  <form id ="choose_deck" action="/play" method="post">
+  <form id ="choose_deck" action="/question" method="post">
     <select name="decks" value="Select your Deck">
       <% Deck.all.each do |deck| %>
       <option value="<%=deck.name%>"><%=deck.name%></option>
@@ -12,5 +12,11 @@
     </select>
     <input type="submit" value="start">
   </form>
+
+  <h2>Your results, deal with it</h2>
+  <%current_user.get_stats.each do |set|%>
+  <strong><%= set[0] %></strong>: <span class="round_percentage"><%= set[1] %></span><br>
+  <%end%>
+  <p><a href="/logout">Sign Out.</a></p>
 
 </div>

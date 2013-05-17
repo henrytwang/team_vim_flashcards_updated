@@ -23,4 +23,11 @@ class User < ActiveRecord::Base
     self.password = BCrypt::Password.create(to_hash)
   end
 
+  def get_stats
+    stats_array = []
+    self.rounds.each do |round|
+      stats_array << round.results 
+    end
+    stats_array
+  end
 end
