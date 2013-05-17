@@ -11,9 +11,12 @@ get '/user_page' do
 end
 
 post '/sign_in' do
-  @user = User.find(:user_id)
-  session[:user_id] = @user.id
-  # redirect to '/user_page'
+  if User.authenticate(params[:email], params[:password])
+    @user = User.find_all_by_email(params[:email])
+    session[:user_id] = @user.id
+  else
+    redirect to '/sign_in'
+  end
   erb :user
 end
 
