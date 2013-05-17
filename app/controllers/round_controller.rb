@@ -7,6 +7,10 @@ end
 get '/results' do
 end
 
+post '/play' do
+  params[:decks]
+end
+
 post '/answer' do
   # logic
   erb :answer
