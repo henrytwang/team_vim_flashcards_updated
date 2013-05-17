@@ -7,6 +7,6 @@ class Round < ActiveRecord::Base
   
   def results
     [self.deck.name, 
-       (self.guesses.where(:correct => true).count/ self.deck.cards.count.to_f)*100]
+       ((self.guesses.where(:correct => true).count/ self.deck.cards.count.to_f) * 100).round(2)]
   end
 end
