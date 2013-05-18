@@ -2,11 +2,11 @@
   <h3><%= @card.question %>?</h3>
 
   <form id ="answer" action="/answer" method="post">
-    <input type="text" name="answer" placeholder="answer me">
-    <input type="hidden" name="card_id" value="<%= @card.id %>">
+    <input type="text" name="answer" placeholder="answer me" autocomplete="off">
+    <input type="hidden" name="card_id" value="<%= @card.id %>" autocomplete="off">
     <br>
     <br>
-    <input type="submit" value="shoot it over">
+    <input class="hide" type="submit" value="shoot it over">
   </form>
 
 </div>

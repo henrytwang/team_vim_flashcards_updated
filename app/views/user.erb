@@ -1,22 +1,15 @@
 <div class="container">
-  <h1>Welcome to Team Vim!</h1>
-  <p>This is your Account page, <span class="deal">deal with it.</span></p>
-
-  <h2>Start a Game.</h2>
-
   <form id ="choose_deck" action="/question" method="post">
     <select name="decks" value="Select your Deck">
       <% Deck.all.each do |deck| %>
       <option value="<%=deck.name%>"><%=deck.name%></option>
       <% end %>
     </select>
-    <input type="submit" value="start">
+    <input class="need-submit" type="submit" value="start">
   </form>
-
-  <h2>Your results, <span class="deal">deal with it.</span></h2>
+  <br>
   <%current_user.get_stats.each do |set|%>
-  <strong><%= set[0] %></strong>: <span class="round_percentage"><%= set[1] %></span><br>
+  <strong><%= set[0] %></strong>: <span class="round_percentage"><%= set[1] %>%</span><br>
   <%end%>
-  <p><a href="/logout">Sign Out.</a></p>
 
 </div>

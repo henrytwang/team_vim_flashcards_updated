@@ -8,7 +8,7 @@ post '/question' do
     session[:round_id] = nil
     erb :results
   else
-    @working = Deck.find_by_name(params[:decks])
+    @working = Deck.find_by_name(params[:decks]) || Deck.find(current_round.deck_id)
     
     @round = current_round || Round.create( :deck_id => @working.id,
                                             :user_id => current_user.id )

@@ -20,13 +20,15 @@
 <body>
 
   <nav class="user-account">
-    <p><a href="/">Beam me up, Scotty</a></p>
     <% if current_user %>
     <p>Sup, <a href="/user_page"><%=current_user.full_name%></a></p>
+    <p><a href="/logout">sign out</a></p>
+    <% else %>
+    <p><a href="/">beam me up, scotty</a></p>
+    <p><a href="/sign_up">treat yo self</a></p>
     <% end %>
   </nav>
   <div class="surround">
-  
   <%= yield %>
   </div>
 </body>

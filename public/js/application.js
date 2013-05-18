@@ -4,4 +4,14 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+
+$('.random-gif').click(function() {
+    $.ajax({
+      type: 'POST',
+      data: 'id=17446&chru=0',
+      url: '/question',
+      cache:false
+    });
+  });
+
+}

@@ -1,13 +1,14 @@
   <div class="answer-info">
   <span class="<%= @guess.correct ? true : false %>">
     <% if @guess.correct %>
-       <img src="/images/success/<%=rand(7)+1%>.gif" />
+       <img class="random-gif" src="/images/success/<%=rand(26)+1%>.gif" />
     <% else %>
-       <img src="/images/fail/<%=rand(9)+1%>.gif" />
+       <img class="random-gif" src="/images/fail/<%=rand(24)+1%>.gif" />
     <% end %>
 
   <form id ="sign_up" action="/question" method="post">
-    <input type="hidden" name="decks" value="<%=current_round.deck.name%>">
-    <input type="submit" value="more">
+    <input class="need-submit" type="submit" value="more">
   </form>
+
+  <p><a href="/quit_round">i'm done with this</a></p>
 </div>

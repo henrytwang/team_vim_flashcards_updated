@@ -1,8 +1,10 @@
 <div class="container">
-  <h1>Welcome to Team Vim!</h1>
-  <p>Here's how you did, <span class="deal">deal with it.</span></p>
 
-  <h2>Number of questions: <%= @total_questions %></h2>
-  <h2>Number of correct answers: <%= @total_correct %>
+  <h2># of questions: <%= @total_questions %></h2>
+  <h2># of correct: <%= @total_correct %></h2>
+  <a href="/user_page">some more please</a>
+  <p>You correctly answered <%= current_user.get_stats.last[1] %>% of the deck.</p>
+
+
 
 </div>
