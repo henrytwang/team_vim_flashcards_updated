@@ -4,7 +4,7 @@ end
 
 get '/sign_in' do
   erb :index
-end 
+end
 
 get '/user_page' do
   erb :user
@@ -14,6 +14,8 @@ post '/sign_in' do
   if User.authenticate(params[:email], params[:password])
     @user = User.find_all_by_email(params[:email]).first
     session[:user_id] = @user.id
+  else
+    redirect to '/'
   end
   erb :user
 end

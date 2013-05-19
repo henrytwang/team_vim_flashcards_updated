@@ -8,8 +8,10 @@
     <input class="need-submit" type="submit" value="start">
   </form>
   <br>
-  <%current_user.get_stats.each do |set|%>
-  <strong><%= set[0] %></strong>: <span class="round_percentage"><%= set[1] %>%</span><br>
+  <% if current_user %>
+    <%current_user.get_stats.each do |set|%>
+    <strong><%= set[0] %></strong>: <span class="round_percentage"><%= set[1] %>%</span><br>
+    <%end%>
   <%end%>
 
 </div>
