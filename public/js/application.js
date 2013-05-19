@@ -5,4 +5,10 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
+  $(".lazy").click(function(event) {
+    event.preventDefault();
+    var test = "test";
+    var hidden_answer = $(".hidden-answer").text();
+    $("input.answer-input").val(hidden_answer);
+  });
 });

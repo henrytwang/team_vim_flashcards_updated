@@ -2,11 +2,15 @@
   <h3><%= @card.question %>?</h3>
 
   <form id="answer" action="/answer" method="post">
-    <input type="text" name="answer" placeholder="what is..." autocomplete="off">
+    <input class="answer-input" type="text" name="answer" placeholder="what is..." autocomplete="off">
     <input type="hidden" name="card_id" value="<%= @card.id %>" autocomplete="off">
     <br>
     <br>
     <input class="hide" type="submit" value="shoot it over">
   </form>
-
+<a class="hint" href="http://lmgtfy.com/?q=<%= @card.question %>" target="_blank">hint me</a>
+<a class="lazy" href="#" target="_blank">gimme that</a>
 </div>
+
+
+<div class="hidden-answer"><%= @card.answer %></div>
