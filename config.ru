@@ -2,7 +2,6 @@
 require ::File.expand_path('../config/environment',  __FILE__)
 require 'rubygems'
 require 'sinatra'
-require './app'
 
 set :app_file, __FILE__
 
