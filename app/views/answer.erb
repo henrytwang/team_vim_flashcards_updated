@@ -6,6 +6,8 @@
        <img class="random-gif" src="/images/fail/<%=rand(24)+1%>.gif" />
     <% end %>
 
+  <%= Card.find(@guess.card_id).answer %>
+
   <form id ="sign_up" action="/question" method="post">
     <input class="need-submit" type="submit" value="more">
   </form>

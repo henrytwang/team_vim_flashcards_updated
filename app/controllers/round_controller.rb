@@ -1,5 +1,5 @@
 post '/question' do
-  
+
   if current_round && (current_round.deck.cards - current_round.cards).empty?
 
     @total_questions = current_round.cards.count
@@ -9,7 +9,7 @@ post '/question' do
     erb :results
   else
     @working = Deck.find_by_name(params[:decks]) || Deck.find(current_round.deck_id)
-    
+
     @round = current_round || Round.create( :deck_id => @working.id,
                                             :user_id => current_user.id )
 
@@ -27,7 +27,6 @@ get '/question' do
 end
 
 post '/answer' do
-  # {"answer"=>"A", "card_id"=>"39"}
   @guess = Guess.create( :card_id => params[:card_id],
                       :guess => params[:answer],
                       :correct => Card.find_by_id(params[:card_id]).correct?(params[:answer]),

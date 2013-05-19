@@ -1,5 +1,5 @@
 body {
-  background: #00A8C6;
+  background: #f3654f;
   font-family: Courier;
 }
 
@@ -9,14 +9,14 @@ input {
 }
 
 input[type="text"], input[type="password"] {
-  width:300px;
+  width:260px;
   height:80px;
   font-size: 40px;
   padding: 0 10px;
 }
 
 input[type="submit"].hide {
-  position: absolute; 
+  position: absolute;
   left: -9999px;
 }
 
